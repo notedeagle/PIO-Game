@@ -10,10 +10,10 @@ public class Main {
 
         do {
             number = dice.nextInt(6) + 1;
-            System.out.println("Wylosowana: " + number);
+            System.out.println("Wylosowana liczba: " + number);
 
             guess = dice.nextInt(6) + 1;
-            System.out.println("Odgadywana: " + guess);
+            System.out.println("Odgadywana liczba: " + guess);
 
             if(number != guess) {
                 System.out.println("Źle! Spróbuj ponownie");
