@@ -1,19 +1,23 @@
+package Game;
+
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Random dice = new Random();
+        Player player = new Player();
+        player.setName("Marian"); //null -> błąd
+
         int number;
         int guess;
 
         do {
-            number = dice.nextInt(6) + 1;
+            number = player.roll();
             System.out.println("Wylosowana liczba: " + number);
 
-            guess = dice.nextInt(6) + 1;
-            System.out.println("Odgadywana liczba: " + guess);
+            guess = player.roll();
+            System.out.println(player.getName() + " odgaduję liczbę: " + guess);
 
             if(number != guess) {
                 System.out.println("Źle! Spróbuj ponownie");
