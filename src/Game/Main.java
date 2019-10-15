@@ -6,6 +6,7 @@ public class Main {
 
         Player player = new Player();
         player.setName("Marian"); //null -> błąd
+        //player.setName(null);
 
         int number;
         int guess;
