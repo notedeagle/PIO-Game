@@ -16,7 +16,7 @@ public class Player {
         if(name != null && !name.isEmpty()) {
             this.name = name;
         } else {
-            System.err.println("Nieprawidłowe imię");
+            System.err.println("Nieprawidłowe imię.");
         }
         
     }
