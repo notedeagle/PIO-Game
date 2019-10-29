@@ -5,9 +5,9 @@ public class Player {
     private Random dice = new Random();
     private String name = "Marian";
     
-    Player() {}
+    public Player() {}
     
-    Player(String name) {
+    public Player(String name) {
         setName(name);
     }
     

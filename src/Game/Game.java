@@ -5,7 +5,8 @@ public class Game {
     public static void main(String[] args) {
         
         Random dice = new Random();
-        Player player = new Player();
+        //Player player = new Player();
+        PlayerHuman player  = new PlayerHuman("Marek");
         
         int number;
         int guess;
@@ -18,7 +19,7 @@ public class Game {
             System.out.println(player.getName() + " odgaduje: " + guess);
             
             if(guess != number) {
-                System.out.println("Źle!");
+                System.out.println("Źle!\n");
             }
             
         }
