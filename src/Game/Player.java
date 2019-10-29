@@ -1,26 +1,31 @@
-package Game;
-
+package game;
 import java.util.Random;
 
 public class Player {
-
     private Random dice = new Random();
-
-    private String name;
-
-    void setName(String name) {
-        if (name != null) {
+    private String name = "Marian";
+    
+    Player() {}
+    
+    Player(String name) {
+        setName(name);
+    }
+    
+    public void setName(String name) {
+        
+        if(name != null && !name.isEmpty()) {
             this.name = name;
         } else {
-            System.err.println("Błąd!");
+            System.err.println("Nieprawidłowe imię");
         }
+        
     }
-
-    String getName() {
+    
+    public String getName() {
         return name;
     }
-
-public int roll() {
-    return dice.nextInt(6) + 1;
-}
+    
+    public int guess() {
+        return dice.nextInt(6) + 1;
+    }
 }
