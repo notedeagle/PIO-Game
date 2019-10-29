@@ -5,9 +5,10 @@ public class Game {
     public static void main(String[] args) {
         
         Random dice = new Random();
-        //Player player = new Player();
-        PlayerHuman player  = new PlayerHuman("Marek");
-        
+       
+        Player player = new PlayerComp(); // new PlayerComp(); 
+           //polimorfizm
+           
         int number;
         int guess;
         

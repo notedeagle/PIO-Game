@@ -1,7 +1,7 @@
 package game;
 import java.util.Random;
 
-public class Player {
+public abstract class Player {
     private Random dice = new Random();
     private String name = "Marian";
     
@@ -25,7 +25,5 @@ public class Player {
         return name;
     }
     
-    public int guess() {
-        return dice.nextInt(6) + 1;
-    }
+    public abstract int guess();
 }
