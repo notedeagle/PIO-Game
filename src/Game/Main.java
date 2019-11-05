@@ -6,13 +6,13 @@ public class Main {
         
         Random dice = new Random(); //losowanie
        
-        Player player = new PlayerComp(); // new PlayerComp()/new PlayerHuman() 
+        Player player = new PlayerHuman(); // new PlayerComp()/new PlayerHuman()
            //polimorfizm
            
         try {
             player.setName("Mietek"); //null
-        } catch (IllegalArgumentException janusz) {
-            System.err.println("Błąd! " + janusz.getMessage());
+        } catch (IllegalArgumentException ex) {
+            System.err.println("Błąd! " + ex.getMessage());
         } catch (Exception janusz) {
             System.err.println("Błąd!");
         }

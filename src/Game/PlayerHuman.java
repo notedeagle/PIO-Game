@@ -13,7 +13,7 @@ public class PlayerHuman extends Player {
 
     @Override
     public int guess() {
-        System.out.println("Podaj losowana liczbe: ");
+        System.out.println("Podaj odgadywaną liczbę[1-6]: ");
         return in.nextInt();
     }
     
