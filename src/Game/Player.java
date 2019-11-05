@@ -1,4 +1,4 @@
-package Game;
+package game;
 import java.util.Random;
 
 public abstract class Player {
@@ -9,14 +9,14 @@ public abstract class Player {
     
     public Player(String name) {
         setName(name);
-    }
+    } 
     
     public void setName(String name) {
         
-        if(name != null && !name.isEmpty()) {
+        if(name != null && name.matches("^[A-Za-z0-9~.]{3,}$")) {
             this.name = name;
         } else {
-            System.err.println("Nieprawidłowe imię.");
+            throw new IllegalArgumentException("Nieprawidłowe imię!");
         }
         
     }
