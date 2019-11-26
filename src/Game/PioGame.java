@@ -1,14 +1,17 @@
-package Game;
-import java.util.Random;
+package game;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class PioGame {
     public static void main(String[] args) {
         
         Game game = new Game();
-
-        Player player = new PlayerComp("Mietek");
-        game.addPlayer(player);
-
+        
+        game.addPlayer(new PlayerComp("Mietek"));
+        game.addPlayer(new PlayerComp("Mietek"));
         game.play();
-    }
+        
+    }    
 }

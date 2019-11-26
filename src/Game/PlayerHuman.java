@@ -1,4 +1,4 @@
-package Game;
+package game;
 import java.util.Scanner;
 
 public class PlayerHuman extends Player {
@@ -13,7 +13,7 @@ public class PlayerHuman extends Player {
 
     @Override
     public int guess() {
-        System.out.println("Podaj odgadywaną liczbę[1-6]: ");
+        System.out.println("Podaj odgadywana liczbe[1-6]: ");
         return in.nextInt();
     }
     

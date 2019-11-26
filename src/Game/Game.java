@@ -1,44 +1,48 @@
-package Game;
+package game;
+
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.List;
 
 public class Game {
-
+    
     private Player player;
+    private List<Player> players = new ArrayList();
     private Random dice = new Random(); //losowanie
-
-    public void addPlayer(Player player) {
+            
+    public void addPlayer(Player player){
         this.player = player;
+        players.add(player);
     }
-
-    public void play() {
+    public void play(){
+       
         int number; //wylosowana liczba
         int guess; //liczba wybrana przez gracz
-
+        boolean repeat;
+        
         do {
+            System.out.println("--------------------");
+            repeat = true;
             number = dice.nextInt(6) + 1;
             System.out.println("Wylosowano: " + number);
 
-            guess = player.guess();
-            System.out.println(player.getName() + " odgaduje: " + guess);
+            for(Player player : players) {
+                guess = player.guess();
+                System.out.println(player.getName() + " odgaduje: " + guess);
 
-            if(guess != number) {
-                System.out.println("Źle!");
-                System.out.println("--------------------");
+                if(number != guess) {
+                    System.out.println("Źle!");
+                } else {
+                    System.out.println("Brawo!");
+                    repeat = false;
+                }           
             }
         }
-        while(number != guess);
-
-        System.out.println("Brawo!");
+        while(repeat);
+        
+        
     }
-
-    //try {
-    //    player.setName("Mietek"); //null
-    //} catch (IllegalArgumentException ex) {
-    //    System.err.println("Błąd! " + ex.getMessage());
-    //} catch (Exception janusz) {
-    //    System.err.println("Błąd!");
-    // }
-
+        
 }
 
-
+// wyświetlanie wszystkich graczy + usuwanie graczy (po imieniu) + dokonczyc imie
