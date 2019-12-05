@@ -1,9 +1,7 @@
 package Game;
-import java.util.Random;
 
 public abstract class Player {
-    private Random dice = new Random();
-    private String name = "Marian";
+    private String name;
     
     public Player() {}
     
@@ -13,7 +11,7 @@ public abstract class Player {
     
     public void setName(String name) {
         
-        if(name != null && name.matches("^[A-Za-z0-9~.]{3,}$")) {
+        if(name != null && name.matches("^[A-Za-z0-9~$.]{3,}$")) {
             this.name = name;
         } else {
             throw new IllegalArgumentException("Nieprawidłowe imię!");

@@ -3,6 +3,7 @@ package Game;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
+import java.util.Iterator;
 
 public class Game {
     
@@ -11,9 +12,39 @@ public class Game {
     private Random dice = new Random(); //losowanie
             
     public void addPlayer(Player player){
-        this.player = player;
-        players.add(player);
+       if (player != null) {
+           if (playerNameOnList(player)) {
+               String name = player.getName();
+               name += "$";
+               player.setName(name);
+               addPlayer(player);
+           } else {
+               players.add(player);
+           }
+       } else throw new IllegalArgumentException("Gracz nie moze byc null.");
     }
+
+    private boolean playerNameOnList(Player player) {
+        for (Player p : players) {
+            if (p.getName().equals(player.getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void removePlayer(String name) {
+        Iterator<Player> it = players.iterator();
+        do {
+            Player p = it.next();
+            if (p.getName().equals(name)) {
+                it.remove();
+                System.out.println("Gracz " + name + " usuniety.");
+            }
+        } while (it.hasNext());
+    }
+
+
     public void play(){
        
         int number; //wylosowana liczba
