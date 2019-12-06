@@ -3,9 +3,12 @@ package Game;
 public abstract class Player {
     private String name;
     
-    public Player() {}
+    public Player() {
+
+    }
     
     public Player(String name) {
+
         setName(name);
     } 
     

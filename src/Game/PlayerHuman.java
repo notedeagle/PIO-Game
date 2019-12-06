@@ -6,6 +6,7 @@ public class PlayerHuman extends Player {
     Scanner in = new Scanner(System.in);
     
     public PlayerHuman() {
+
     }
 
     public PlayerHuman(String name) {
@@ -15,7 +16,7 @@ public class PlayerHuman extends Player {
 
     @Override
     public int guess() {
-        System.out.println("Podaj odgadywana liczbe[1-6]: ");
+        System.out.println(getName() + " podaj odgadywana liczbe[1-6]: ");
         return in.nextInt();
     }
     

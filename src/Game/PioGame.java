@@ -17,7 +17,7 @@ public class PioGame {
             System.out.println("Wybierz rodzaj gracza:\n1. Czlowiek\n2. Komputer");
             int num = in.nextInt();
             if (num == 1) {
-                game.addPlayer(new PlayerHuman());
+                game.addPlayer(new PlayerHuman("Marian"));
             } else if (num == 2) {
                 game.addPlayer(new PlayerComp("Komputer"));
             } else {
@@ -27,8 +27,23 @@ public class PioGame {
             numOfPlayers--;
         } while(numOfPlayers != 0);
 
-        game.play();
+        game.printPlayers();
 
+        int removePlayer;
+        do {
+            System.out.println("Czy chcesz usunac gracza?\n1. TAK\n2. NIE");
+
+            removePlayer = in.nextInt();
+
+            if (removePlayer == 1) {
+                System.out.println("Wpisz imie gracza, ktorego chcesz usunac.");
+                in.nextLine();
+                String nameToRemove = in.nextLine();
+                game.removePlayer(nameToRemove);
+            }
+        } while (removePlayer != 2);
+
+        game.play();
 
     }
 }

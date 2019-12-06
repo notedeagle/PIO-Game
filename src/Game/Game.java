@@ -33,6 +33,13 @@ public class Game {
         return false;
     }
 
+    public void printPlayers() {
+        System.out.println("Lista dodanych graczy:");
+        for (Player player : players) {
+            System.out.println(player.getName());
+        }
+    }
+
     void removePlayer(String name) {
         Iterator<Player> it = players.iterator();
         do {
