@@ -17,7 +17,10 @@ public class PioGame {
             System.out.println("Wybierz rodzaj gracza:\n1. Czlowiek\n2. Komputer");
             int num = in.nextInt();
             if (num == 1) {
-                game.addPlayer(new PlayerHuman("Marian"));
+                System.out.println("Podaj imie:");
+                in.nextLine();
+                String name = in.nextLine();
+                game.addPlayer(new PlayerHuman(name));
             } else if (num == 2) {
                 game.addPlayer(new PlayerComp("Komputer"));
             } else {
